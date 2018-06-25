@@ -33,3 +33,12 @@ Finally, run the application using `iex`:
 ```console
 iex -S mix run
 ```
+
+## Usage
+
+Once you've started an `iex` console you can start interacting with the `kv` application by dispatching commands.
+
+```elixir
+:ok = Kv.Router.dispatch(%Kv.PutValue{key: "foo", value: 1})
+:ok = Kv.Router.dispatch(%Kv.IncrementValue{key: "foo", increment: 1})
+```
