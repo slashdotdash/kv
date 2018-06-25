@@ -1,21 +1,35 @@
 # Kv
 
-**TODO: Add description**
+Key/value store in Elixir using Commanded CQRS/ES.
 
-## Installation
+## Getting started
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `kv` to your list of dependencies in `mix.exs`:
+1. Clone Git repo from GitHub:
 
-```elixir
-def deps do
-  [
-    {:kv, "~> 0.1.0"}
-  ]
-end
+    ```console
+    git clone https://github.com/slashdotdash/kv.git
+    ```
+
+2. Fetch mix dependencies:
+
+    ```console
+    mix deps.get
+    ```
+
+3. Create and initialise event store database:
+
+    ```console
+    mix do event_store.create, event_store.init
+    ```
+
+4. Create and migrate read store database:
+
+    ```console
+    mix do ecto.create, ecto.migrate
+    ```
+
+Finally, run the application using `iex`:
+
+```console
+iex -S mix run
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/kv](https://hexdocs.pm/kv).
-
